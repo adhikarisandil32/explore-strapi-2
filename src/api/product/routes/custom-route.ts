@@ -3,8 +3,8 @@ export default {
   routes: [
     {
       method: "GET",
-      path: "/test",
-      handler: "custom-controller.custom-controller-function",
+      path: "/product/custom-endpoint",
+      handler: "custom-controller.logValueFromCustom",
       config: {
         policies: ["allow-all"]
       }
