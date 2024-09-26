@@ -8,6 +8,14 @@ export default {
       config: {
         policies: ["allow-all"]
       }
+    },
+    {
+      method: "GET",
+      path: "/product/logger-endpoint",
+      handler: "product.logValue",
+      config: {
+        policies: ["allow-all"]
+      }
     }
   ]
 }
