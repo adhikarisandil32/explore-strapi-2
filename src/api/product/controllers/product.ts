@@ -2,17 +2,32 @@
  * product controller
  */
 
-import { factories } from "@strapi/strapi";
+import { factories } from "@strapi/strapi"
 
 export default factories.createCoreController("api::product.product", ({ strapi }) => ({
-  // this controller can be viewed inside products inside roles under user and permissions 
-  async logValue(ctx) {
+  // this controller can be viewed inside products inside roles under user and permissions
+
+  async logValue(ctx, next) {
     // console.log(ctx.state);
-    console.log(ctx);
+    // console.log(ctx, "just above the plugin controller")
+    console.log(ctx.request.body, "from logVaue ctx request body")
+
+    // const users = await strapi.service("plugin::users-permissions.user").find(ctx, next)
+    // console.log(strapi.service("plugin::users-permissions.user"))
+
+    console.log(strapi.service("plugin::users-permissions.user").fetch({}))
+
+    // console.log(users, "users from plugi controllers")
+    // response on the postman returns from the find controller
+
+    /* console.log(
+      strapi.controller("api::product.custom-controller")["custom-controller-function"](ctx, next),
+      "plugin controller"
+    ) */
 
     return {
       success: true,
-      message: "successful"
+      message: "successful",
     }
   },
-}));
+}))
