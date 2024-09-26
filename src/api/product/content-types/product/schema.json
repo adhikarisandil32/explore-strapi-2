@@ -36,8 +36,11 @@
     },
     "slug": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": false,
+      "unique": false
+    },
+    "RichText": {
+      "type": "richtext"
     }
   }
 }
