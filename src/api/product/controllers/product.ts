@@ -10,12 +10,17 @@ export default factories.createCoreController("api::product.product", ({ strapi 
   async logValue(ctx, next) {
     // console.log(ctx.state);
     // console.log(ctx, "just above the plugin controller")
-    console.log(ctx.request.body, "from logVaue ctx request body")
+    // console.log(ctx.request.body, "from logVaue ctx request body")
 
     // const users = await strapi.service("plugin::users-permissions.user").find(ctx, next)
     // console.log(strapi.service("plugin::users-permissions.user"))
+    // console.log(strapi.service("plugin::users-permissions.user"))
 
-    console.log(strapi.service("plugin::users-permissions.user").fetch({}))
+    const user = await strapi.service("plugin::users-permissions.user").fetchAll({})
+
+    /* console.log(ctx.state, "ctx.state")
+
+    console.log(user) */
 
     // console.log(users, "users from plugi controllers")
     // response on the postman returns from the find controller

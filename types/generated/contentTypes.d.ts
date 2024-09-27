@@ -9,7 +9,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Schema.Attribute.String & Schema.Attribute.Required;
@@ -21,6 +21,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     >;
     slug: Schema.Attribute.String;
     RichText: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
