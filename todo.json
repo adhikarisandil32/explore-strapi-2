@@ -1,0 +1,12 @@
+[
+  {
+    "task": "study where do we get strapi service functions (fetchAll) from (refer api/product/controllers/product.ts)",
+    "completed": false,
+    "date": "2024-10-01"
+  },
+  {
+    "task": "add only fields except some in strapi response",
+    "completed": false,
+    "date": "2024-10-01"
+  }
+]

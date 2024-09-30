@@ -13,10 +13,17 @@ export default factories.createCoreController("api::product.product", ({ strapi 
     // console.log(ctx.request.body, "from logVaue ctx request body")
 
     // const users = await strapi.service("plugin::users-permissions.user").find(ctx, next)
-    // console.log(strapi.service("plugin::users-permissions.user"))
-    // console.log(strapi.service("plugin::users-permissions.user"))
+    // console.log(strapi.service("plugin::users-permissions.user").fetchAll) // to get the functionName as used below
 
-    const user = await strapi.service("plugin::users-permissions.user").fetchAll({})
+    // careful, because this will show each and evey details, including passwords and the fields which the users isn't supposed to see
+    const users = await strapi.service("plugin::users-permissions.user").fetchAll({
+      populate: "*",
+      fields: [
+        {
+          password: false,
+        },
+      ],
+    })
 
     /* console.log(ctx.state, "ctx.state")
 
@@ -33,6 +40,7 @@ export default factories.createCoreController("api::product.product", ({ strapi 
     return {
       success: true,
       message: "successful",
+      fetchedUsers: users,
     }
   },
 }))
