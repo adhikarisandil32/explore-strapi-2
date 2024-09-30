@@ -2,7 +2,7 @@ export default {
   routes: [
     {
       method: "GET",
-      path: "/product/custom-endpoint",
+      path: "/products/custom-endpoint",
       handler: "custom-controller.custom-controller-function",
       config: {
         policies: ["allow-all"],
@@ -16,7 +16,7 @@ export default {
     },
     {
       method: "GET",
-      path: "/product/logger-endpoint",
+      path: "/products/logger-endpoint",
       handler: "product.logValue",
       config: {
         middlewares: [

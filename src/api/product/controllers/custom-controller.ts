@@ -1,3 +1,4 @@
+import { Context, Next } from "koa"
 // this code and the code below produce the same result. Show the function in the location (in admin pannel) > settings > roles (inside users & permissions) > expand the product
 export default {
   "custom-controller-function": async (ctx, next) => {
