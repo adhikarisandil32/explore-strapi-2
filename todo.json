@@ -5,7 +5,7 @@
     "date": "2024-10-01"
   },
   {
-    "task": "add only fields except some in strapi response",
+    "task": "add all fields except some in strapi response",
     "completed": false,
     "date": "2024-10-01"
   }
